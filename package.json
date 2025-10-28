@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "nodemon app.ts"
+    "dev": "nodemon -x ts-node app.ts",
+    "postinstall": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,6 @@
     "nodemon": "^3.1.10",
     "passport-google-oauth20": "^2.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
