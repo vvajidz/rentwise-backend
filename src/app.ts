@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
-import connectDB from "./src/config/db";
-import authRouter from "./src/routes/authRoutes";
-import adminRouter from "./src/routes/adminRoutes"
-import propertyRouter from "./src/routes/propertyRouter"
+import connectDB from "./config/db";
+import authRouter from "./routes/authRoutes";
+import adminRouter from "./routes/adminRoutes"
+import propertyRouter from "./routes/propertyRouter"
 import cookieParser from "cookie-parser";
-import ownerRouter from "./src/routes/ownerRoutes"
-import tenantRouter from "./src/routes/tenantRoutes"
-import bookingRouter from "./src/routes/bookingRoutes"
+import ownerRouter from "./routes/ownerRoutes"
+import tenantRouter from "./routes/tenantRoutes"
+import bookingRouter from "./routes/bookingRoutes"
 
 // Connect to DB
 connectDB();
