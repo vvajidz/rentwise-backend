@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "app.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/app.js",
+    "build": "npx tsc",
+    "start": "node ./dist/app.js",
     "dev": "nodemon -x ts-node app.ts",
-    "postinstall": "tsc"
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
