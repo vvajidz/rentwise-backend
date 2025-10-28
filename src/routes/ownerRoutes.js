@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const verifyRole_1 = require("../middleware/verifyRole");
+const owner_1 = require("../controllers/owner");
+const getme_1 = require("../middleware/getme");
+const router = (0, express_1.Router)();
+router.get('/property/:ownerId', (0, verifyRole_1.verifyRole)(["owner"]), owner_1.getOwnerWithProperties);
+router.get('/property/accepted/request', getme_1.verifyToken, owner_1.getOwnerBookingRequests);
+router.put("/property/request/:id/confirm", getme_1.verifyToken, owner_1.confirmBookingRequest);
+router.patch("/property/edit/:propertyId", (0, verifyRole_1.verifyRole)(["owner"]), owner_1.updateProperty);
+router.get("/confirm/tenants", getme_1.verifyToken, owner_1.getConfirmedTenants);
+router.delete("/delete/request/:requestId", getme_1.verifyToken, owner_1.declineRequest);
+exports.default = router;
