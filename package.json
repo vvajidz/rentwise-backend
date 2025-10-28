@@ -1,10 +1,11 @@
 {
   "name": "back-end",
   "version": "1.0.0",
-  "main": "app.ts",
+  "main": "dist/src/app.js",
+  "type": "commonjs",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node ./dist/src/app.js",
+    "build": "tsc",
+    "start": "node dist/src/app.js",
     "dev": "nodemon -x ts-node ./src/app.ts",
     "postinstall": "npm run build"
   },
