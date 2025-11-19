@@ -109,7 +109,7 @@ export const login = async (req: Request, res: Response) => {
       .cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
+        sameSite: "none",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       })
       .status(200)
@@ -137,7 +137,7 @@ export const logout = async(req:Request , res:Response) => {
         .clearCookie("token", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "strict"
+        sameSite: "none"
         })
         .status(200).json({
             message: "Logout successfully"
