@@ -16,7 +16,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: "https://rentwise-gilt.vercel.app",
+  origin: "http://localhost:3000",
   credentials: true
 }));
 
