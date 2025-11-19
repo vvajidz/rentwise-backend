@@ -15,8 +15,19 @@ connectDB();
 const app = express();
 
 // CORS
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://rentwise-gilt.vercel.app"
+];
+
 app.use(cors({
-  origin: "https://rentwise-gilt.vercel.app",
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
